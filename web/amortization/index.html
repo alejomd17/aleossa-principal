@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amortización de crédito</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Tabla de amortización de crédito</h1>
+    <div id="amortizationForm" class="amortization-form">
+        <h2>Detalles del crédito</h2>
+            <div class="form-row">
+                <div class="form-group large-input">
+                    <label for="desembolsoDate">Fecha del Préstamo:</label>
+                    <input type="text" id="desembolsoDate" name="desembolsoDate"
+                        placeholder="Ej. 202601" required>
+                </div>
+                <div class="form-group large-input">
+                    <label for="loanAmount">Monto del Préstamo:</label>
+                    <input type="number" id="loanAmount" name="loanAmount" 
+                        placeholder="Ej. 100.000.000" required>
+                </div>
+                <div class="form-group large-input">
+                    <label for="loanTermYears">Plazo (años):</label>
+                    <input type="number" id="loanTermYears" name="loanTermYears" 
+                            placeholder="Ej. 20" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group large-input">
+                    <label for="InterestRate">Tasa de Interés:</label>
+                    <input type="number" id="InterestRate" name="InterestRate" 
+                        placeholder="Ej. 12" required>
+                </div>
+                <div class="form-group small-input">
+                    <label for="rateType">Tipo de Tasa:</label>
+                    <select id="rateType" name="rateType" placeholder="Seleccione si es Nominal o Efectiva">
+                        <option value="Nominal">Nominal</option>
+                        <option value="Efectiva" selected>Efectiva</option>
+                    </select>
+                </div>
+                <div class="form-group small-input">
+                    <label for="ratePeriod">Período de la tasa:</label>
+                    <select id="ratePeriod" name="ratePeriod">
+                        <option value="Anual" selected>Anual</option>
+                        <option value="Mensual">Mensual</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group large-input">
+                    <label for="insurance">Otros gastos (seguro, aportes, etc.):</label>
+                    <input type="number" id="insurance" name="insurance" 
+                            placeholder="Ej. 90.000">
+                </div>
+            </div>
+
+                <div id="extraAbonosForm" class="abonoscapital-form">
+                    <h2>Abonos extras</h2>
+                        <div class="form-row">
+                            <div class="form-group small-input">
+                                <label for="abonosCapitalDate">Fecha del Abono:</label>
+                                <input type="text" id="abonosCapitalDate" name="abonosCapitalDate"
+                                    placeholder="Ej. 202606" required>
+                            </div>
+                            <div class="form-group small-input">
+                                <label for="abonosCapitalValue">Monto del Abono:</label>
+                                <input type="number" id="abonosCapitalValue" name="abonosCapitalValue"
+                                    placeholder="Ej. 30.000.000" required>
+                            </div>
+                            <div class="form-group small-input">
+                                <button id="addAbonosCapital" class="btn btn-sec">
+                                    Agregar abono
+                                </button>
+                            </div>
+                        </div>
+                            
+                            <div id="extraAbonosCapitalContainer" class="abonoscapital-container">
+                                <table id="abonosTable" class="abonos-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Abono</th>
+                                            <th>Monto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+
+    </div>
+
+    <div class="button-container">
+        <button id="calculateBtn" class="btn btn-primary">
+            Calcular
+        </button>
+    </div>
+    
+    <div id="resultsTable" class="card results-card hidden">
+        <h2>Calculo del crédito</h2>
+            <table id="calculationResult">
+            <thead>
+                <tr>
+                    <th>Num</th>
+                    <th>Anno_Mes</th>
+                    <th>Interest</th>
+                    <th>Capital</th>
+                    <th>Others</th>
+                    <th>Payment</th>
+                    <th>Abono</th>
+                    <th>Balance</th>
+                    
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <!-- <script src="/static/amortization_test.js"></script> -->
+    <script src="/static/amortization.js"></script>
+</body>
+</html>

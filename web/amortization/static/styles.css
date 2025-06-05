@@ -1,0 +1,307 @@
+/* ===== VARIABLES Y RESET ===== */
+:root {
+    /* Colores */
+    --color-primary: #3498db;
+    --color-secondary: #2ecc71;
+    --color-danger: #e74c3c;
+    --color-dark: #2c3e50;
+    --color-gray-dark: #495057;
+    --color-gray-medium: #adb5bd;
+    --color-gray-light: #e1e5eb;
+    --color-gray-very-light: #f8f9fa;
+    --color-bg: #f5f7fa;
+    --color-white: #ffffff;
+  
+    /* Tamaños */
+    --font-size-xl: 2.2rem;
+    --font-size-lg: 1.5rem;
+    --font-size-md: 1.05rem;
+    --font-size-base: 1rem;
+    --font-size-sm: 0.95rem;
+    --font-size-xs: 0.9rem;
+    --font-size-xxs: 0.8rem;
+  
+    /* Espaciados */
+    --space-xl: 30px;
+    --space-lg: 25px;
+    --space-md: 20px;
+    --space-sm: 15px;
+    --space-xs: 10px;
+    --space-xxs: 8px;
+    --space-xxxs: 5px;
+  
+    /* Bordes */
+    --border-radius-lg: 8px;
+    --border-radius-md: 6px;
+    --border-radius-sm: 4px;
+    --border-radius-xs: 3px;
+    --border-width: 1px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* ===== ESTILOS BASE ===== */
+  body {
+    background-color: var(--color-bg);
+    color: #333;
+    line-height: 1.6;
+    padding: var(--space-md);
+  }
+  
+  h1, h2 {
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+  }
+  
+  h1 {
+    font-size: var(--font-size-xl);
+    text-align: center;
+    border-bottom: var(--border-width) solid var(--color-primary);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-xl);
+  }
+  
+  h2 {
+    font-size: var(--font-size-lg);
+    margin-top: var(--space-lg);
+    color: var(--color-primary);
+  }
+  
+  /* ===== COMPONENTES DE FORMULARIO ===== */
+  .amortization-form,
+  .results-card,
+  .abonoscapital-form {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .abonoscapital-form {
+    background-color: var(--color-gray-very-light);
+    border-radius: var(--border-radius-md);
+    border: var(--border-width) solid var(--color-gray-light);
+    margin-top: var(--space-lg);
+  }
+  
+  .form-row {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    align-items: flex-end;
+  }
+  
+  .form-group {
+    margin-bottom: var(--space-sm);
+    min-width: 0;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: var(--space-xxs);
+    font-weight: 600;
+    color: var(--color-gray-dark);
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: var(--space-xs) var(--space-sm);
+    border: var(--border-width) solid var(--color-gray-light);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    transition: border-color 0.15s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  }
+  
+  input::placeholder {
+    color: var(--color-gray-medium);
+  }
+  
+  /* Tamaños de campos */
+  .form-group.large-input { flex: 3; }
+  .form-group.large-input input {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-md);
+  }
+  
+  .form-group.small-input { flex: 1; }
+  .form-group.small-input select {
+    padding: var(--space-xs) var(--space-sm);
+  }
+  
+  /* ===== TABLAS ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-sm);
+  }
+  
+  .abonos-table {
+    width: 50%;
+    font-size: var(--font-size-xs);
+  }
+  
+  th, td {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    border-bottom: var(--border-width) solid var(--color-gray-light);
+  }
+  
+  th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+  }
+  
+  .abonos-table th {
+    background-color: var(--color-secondary);
+  }
+  
+  tr:nth-child(even) {
+    background-color: var(--color-gray-very-light);
+  }
+  
+  /* ===== BOTONES ===== */
+  .button-container {
+    text-align: center;
+    margin: var(--space-lg) 0;
+  }
+  
+  .btn {
+    padding: var(--space-xs) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  .btn-primary:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn-sec {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+  .btn-sec:hover {
+    background-color: #27ae60;
+  }
+  
+  .btn-remove-abono {
+    background: none;
+    border: none;
+    color: var(--color-danger);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    padding: 0 var(--space-xxxs);
+    transition: color 0.2s;
+  }
+  .btn-remove-abono:hover {
+    color: #c0392b;
+  }
+  
+  .abonos-table .btn-remove-abono {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    font-size: var(--font-size-xxs);
+    padding: var(--space-xxxs) var(--space-xs);
+    border-radius: var(--border-radius-xs);
+  }
+  
+  /* ===== COMPONENTES ESPECÍFICOS ===== */
+  .abonoscapital-container {
+    margin-top: var(--space-sm);
+  }
+  
+  .abono-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--color-gray-light);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--space-xxs);
+  }
+  
+  .abono-item span {
+    font-size: var(--font-size-sm);
+  }
+  .abono-item strong {
+    color: var(--color-dark);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    body {
+      padding: var(--space-xs);
+    }
+    
+    .amortization-form,
+    .results-card {
+      padding: var(--space-sm);
+    }
+    
+    .form-row {
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    
+    .form-group.large-input,
+    .form-group.small-input {
+      width: 100%;
+    }
+    
+    .form-group input,
+    .form-group select {
+      padding: var(--space-sm) var(--space-md);
+    }
+    
+    th, td {
+      padding: var(--space-xxs) var(--space-xs);
+      font-size: var(--font-size-xs);
+    }
+    
+    h1 {
+      font-size: var(--font-size-lg);
+    }
+    
+    .abonos-table {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .abono-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .btn-remove-abono {
+      margin-top: var(--space-xxxs);
+      align-self: flex-end;
+    }
+  }
